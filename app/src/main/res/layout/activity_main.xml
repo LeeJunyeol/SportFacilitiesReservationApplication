@@ -23,4 +23,13 @@
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="198dp" />
 
+    <TextView
+        android:id="@+id/mskim"
+        android:layout_width="72dp"
+        android:layout_height="96dp"
+        android:text="한글한글"
+        tools:layout_editor_absoluteX="59dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/button" />
+
 </android.support.constraint.ConstraintLayout>
