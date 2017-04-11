@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:text="Button"
         tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="198dp" />
+        tools:layout_editor_absoluteY="198dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
         android:id="@+id/mskim"
@@ -30,6 +31,7 @@
         android:text="한글한글"
         tools:layout_editor_absoluteX="59dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button" />
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
