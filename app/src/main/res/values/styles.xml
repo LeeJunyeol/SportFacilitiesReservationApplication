@@ -8,7 +8,9 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    <item name="minTabContentSize" type="dimen" format="dimension">400dp</item>
+
+    <item name="minTabContentSize" format="dimension" type="dimen">400dp</item>
 
 </resources>
