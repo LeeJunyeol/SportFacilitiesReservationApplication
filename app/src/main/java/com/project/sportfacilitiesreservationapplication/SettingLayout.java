@@ -1,22 +1,23 @@
 package com.project.sportfacilitiesreservationapplication;
 
-import android.app.Fragment;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 /**
- * Created by JUO on 13/04/2017.
+ * Created by JUO on 2017. 4. 21..
  */
 
-public class SettingLayout extends Fragment {
-    View v;
-    @Nullable
+public class SettingLayout extends Activity{
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-         v = inflater.inflate(R.layout.setting, container, false);
-        return v;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.setting);
+
+
+
     }
+
+
 }
