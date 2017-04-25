@@ -71,7 +71,9 @@ public class SportFacRecyclerAdapter extends RecyclerView.Adapter<SportFacRecycl
         return titles.length;
     }
 
+/*
     private class GetSportReservationDataTask extends AsyncTaskv<String, void, >{
 
     }
+*/
 }
