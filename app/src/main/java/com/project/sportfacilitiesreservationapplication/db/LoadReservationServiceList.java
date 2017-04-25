@@ -1,5 +1,7 @@
 package com.project.sportfacilitiesreservationapplication.db;
 
+import android.os.AsyncTask;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
@@ -8,7 +10,26 @@ import java.util.Properties;
  * Created by jylee on 2017-04-24.
  */
 
-public class LoadReservationServiceList extends AsyncTask<User, Integer, Integer> {
+public class LoadReservationServiceList extends AsyncTask<Integer, Integer, Integer> {
+    /**
+     * Override this method to perform a computation on a background thread. The
+     * specified parameters are the parameters passed to {@link #execute}
+     * by the caller of this task.
+     * <p>
+     * This method can call {@link #publishProgress} to publish updates
+     * on the UI thread.
+     *
+     * @param params The parameters of the task.
+     * @return A result, defined by the subclass of this task.
+     * @see #onPreExecute()
+     * @see #onPostExecute
+     * @see #publishProgress
+     */
+    @Override
+    protected Integer doInBackground(Integer... params) {
+        return null;
+    }
+    /*
         @Override
         protected Integer doInBackground(User... users) {
             Connection conn = null;
@@ -142,5 +163,6 @@ public class LoadReservationServiceList extends AsyncTask<User, Integer, Integer
             }
         }
     }
+*/
 
 }

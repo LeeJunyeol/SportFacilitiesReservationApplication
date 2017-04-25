@@ -16,5 +16,6 @@ public class JDBCConnection {
         if (conn != null) {
             System.out.println("Connected");
         }
+        return null;
     }
 }
