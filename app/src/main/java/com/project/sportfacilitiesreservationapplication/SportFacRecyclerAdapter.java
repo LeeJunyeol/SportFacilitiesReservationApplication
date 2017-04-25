@@ -2,6 +2,7 @@ package com.project.sportfacilitiesreservationapplication;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
@@ -26,22 +27,7 @@ public class SportFacRecyclerAdapter extends RecyclerView.Adapter<SportFacRecycl
 
     private int[] images = { R.drawable.ic_basketball, R.drawable.ic_football, R.drawable.ic_badminton};
 
-/*
-    String url = "http://lod.seoul.go.kr/home/sparqlEndpoint/sparqlResult.jsp?query=PREFIX%2520rdf%253A%2520%253Chttp%253A%252F%252Fwww.w3.org%252F1999%252F02%252F22-rdf-syntax-ns%2523%253E%250APREFIX%2520rdfs%253A%2520%253Chttp%253A%252F%252Fwww.w3.org%252F2000%252F01%252Frdf-schema%2523%253E%250APREFIX%2520seoul%253A%2520%253Chttp%253A%252F%252Flod.seoul.go.kr%252Fontology%252F%253E%250APREFIX%2520schema%253A%2520%253Chttp%253A%252F%252Fschema.org%252F%253E%250ASELECT%2520*%250AWHERE%2520%257B%2520%250A%2520%2520%2520%2520%253Freserve%2520rdf%253Atype%2520seoul%253AReservationInfo%2520.%250A%2520%2520%2520%2520%253Freserve%2520seoul%253AmainServiceCategory%2520%253Chttp%253A%252F%252Flod.seoul.go.kr%252Fresource%252FPublicServiceCategory%252FT100%253E%2520.%250A%2520%2520%2520%2520%253Freserve%2520rdfs%253Alabel%2520%253Fname%2520.%250A%257D&rslt_type=html";
-    boolean isFavorite = false;
-
-    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-    StrictMode.setThreadPolicy(policy);
-    try {
-            String s = HttpUtil.get(url);
-    } catch (JSONException e2) {
-        // TODO Auto-generated catch block
-        e2.printStackTrace();
-    } catch (Exception e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-    }
-*/
+    private String[] placenm = {"풋살경기장","테니스장","축구장","족구장","야구장","배구장","다목적경기장","농구장","골프장","배드민턴장"};
 
     class ViewHolder extends RecyclerView.ViewHolder{
         public ImageView itemImage;
@@ -64,7 +50,6 @@ public class SportFacRecyclerAdapter extends RecyclerView.Adapter<SportFacRecycl
                 }
             });
         }
-
     }
 
     @Override
@@ -84,5 +69,9 @@ public class SportFacRecyclerAdapter extends RecyclerView.Adapter<SportFacRecycl
     @Override
     public int getItemCount() {
         return titles.length;
+    }
+
+    private class GetSportReservationDataTask extends AsyncTaskv<String, void, >{
+
     }
 }

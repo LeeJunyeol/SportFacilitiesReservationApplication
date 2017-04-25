@@ -31,8 +31,8 @@ public class TabPagerAdapter extends FragmentPagerAdapter{
                 Tab2FindOpponentFragment tab2FindOpponentFragment = new Tab2FindOpponentFragment();
                 return tab2FindOpponentFragment;
             case 2:
-                Tab3FavoriteSprotFacFragment tab3FavoriteSprotFacFragment = new Tab3FavoriteSprotFacFragment();
-                return tab3FavoriteSprotFacFragment;
+                Tab3FavoriteSportFacFragment tab3FavoriteSportFacFragment = new Tab3FavoriteSportFacFragment();
+                return tab3FavoriteSportFacFragment;
             default:
                 return null;
         }

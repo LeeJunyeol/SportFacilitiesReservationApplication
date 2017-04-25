@@ -13,14 +13,14 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Tab3FavoriteSprotFacFragment extends Fragment {
+public class Tab3FavoriteSportFacFragment extends Fragment {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
     View view;
 
-    public Tab3FavoriteSprotFacFragment() {
+    public Tab3FavoriteSportFacFragment() {
         // Required empty public constructor
     }
 
