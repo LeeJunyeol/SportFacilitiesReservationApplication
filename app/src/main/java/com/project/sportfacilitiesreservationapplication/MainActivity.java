@@ -19,98 +19,88 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-
     private ActionBarDrawerToggle toggle;
     private DrawerLayout drawer;
-    //태중
-/*
-    ListView listView;
-    ListAdapter_search listAdapterSearch;
-    ArrayList<list_search> list_searchArrayList;
-*/
-    //태중
+    private Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
-
-    // activity_main에 있는 툴바를 액션바로 이용
-    Toolbar toolbar = (Toolbar) findViewById(R.id.tb_common);
+        // activity_main에 있는 툴바를 액션바로 이용
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tb_common);
         toolbar.setTitle("testett");
-    setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
-    TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout_main);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout_main);
 
         tabLayout.addTab(tabLayout.newTab().setText("체육시설"));
         tabLayout.addTab(tabLayout.newTab().setText("상대찾기"));
         tabLayout.addTab(tabLayout.newTab().setText("즐겨찾기"));
 
-    final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-    final PagerAdapter adapter = new TabPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        final PagerAdapter adapter = new TabPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
-        /**
-         * Called when a tab enters the selected state.
-         *
-         * @param tab The tab that was selected
-         */
-        @Override
-        public void onTabSelected(TabLayout.Tab tab) {
-            viewPager.setCurrentItem(tab.getPosition());
-        }
+            /**
+             * Called when a tab enters the selected state.
+             *
+             * @param tab The tab that was selected
+             */
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
 
-        /**
-         * Called when a tab exits the selected state.
-         *
-         * @param tab The tab that was unselected
-         */
-        @Override
-        public void onTabUnselected(TabLayout.Tab tab) {
+            /**
+             * Called when a tab exits the selected state.
+             *
+             * @param tab The tab that was unselected
+             */
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
 
-        }
+            }
 
-        /**
-         * Called when a tab that is already selected is chosen again by the user. Some applications
-         * may use this action to return to the top level of a category.
-         *
-         * @param tab The tab that was reselected.
-         */
-        @Override
-        public void onTabReselected(TabLayout.Tab tab) {
+            /**
+             * Called when a tab that is already selected is chosen again by the user. Some applications
+             * may use this action to return to the top level of a category.
+             *
+             * @param tab The tab that was reselected.
+             */
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
 
-        }
-    });
+            }
+        });
 
 
-    // drawer 부분
+        // drawer 부분
 
-    drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-    toggle = new ActionBarDrawerToggle(
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
 
 
         toggle.syncState();
 
-    // drawer 버튼 누르면 실행
-    ActionBar ab = getSupportActionBar();
+        // drawer 버튼 누르면 실행
+        ActionBar ab = getSupportActionBar();
         if (null != ab) {
-        ab.setDisplayHomeAsUpEnabled(true);
-    }
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
 
-    NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-}
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -134,7 +124,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_setting) {
-
+            intent = new Intent(this, SettingLayout.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
